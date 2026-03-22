@@ -1,0 +1,24 @@
+import os
+import cv2
+import numpy as np
+from tensorflow.keras.models import load_model
+
+model = load_model("../model/malware_model.h5")
+
+folder = "../dataset/malimg/Adialer.C"
+
+image_name = os.listdir(folder)[0]
+
+image_path = os.path.join(folder, image_name)
+
+print("Testing image:", image_name)
+
+img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+
+img = cv2.resize(img, (128,128))
+img = img / 255.0
+img = img.reshape(1,128,128,1)
+
+prediction = model.predict(img)
+
+print("Predicted class:", np.argmax(prediction))

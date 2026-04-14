@@ -34,7 +34,7 @@ zero_day_malware_detection/
 └── README.md
 ⚙️ Installation
 1. Clone the Repository
-git clone https://github.com/your-username/zero-day-malware-detection.git
+git clone https://github.com/your-izanaryan/zero-day-malware-detection.git
 cd zero-day-malware-detection
 2. Create Virtual Environment (Recommended)
 python -m venv venv
